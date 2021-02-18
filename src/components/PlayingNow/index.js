@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { View, Image, Text } from 'react-native'
+import { TouchableNativeFeedback } from 'react-native-gesture-handler'
 
 import moreVerticalIcon from '../../../assets/images/icons/more-vertical.png'
 import chevronLeftIcon from '../../../assets/images/icons/chevron-left.png'
@@ -11,7 +12,6 @@ import skipForwardIcon from '../../../assets/images/icons/skip-forward.png'
 import chevronUpIcon from '../../../assets/images/icons/chevron-up.png'
 
 import styles from './styles'
-import { TouchableNativeFeedback } from 'react-native-gesture-handler'
 
 import { Audio } from 'expo-av'
 
@@ -41,7 +41,7 @@ export default function PlayingNow({ navigation }) {
   return (
     <>
       <View style={styles.header}>
-        <TouchableNativeFeedback onPress={() => navigation.navigate('Tab')}>
+        <TouchableNativeFeedback onPress={() => navigation.navigate('MusicList')}>
           <Image style={styles.actionIcon} source={chevronLeftIcon}></Image>
         </TouchableNativeFeedback>
         <Text style={styles.headerText}>PLAYING NOW</Text>
@@ -78,10 +78,10 @@ export default function PlayingNow({ navigation }) {
         </View>
       </View>
 
-      <TouchableNativeFeedback style={styles.pushButton} onPress={() => navigation.navigate('MusicList')}>
+      {/* <TouchableNativeFeedback style={styles.pushButton} onPress={() => navigation.navigate('MusicList')}>
         <Image style={styles.actionIconSmall} source={chevronUpIcon}></Image>
         <Text style={styles.pushButtonText}>PUSH</Text>
-      </TouchableNativeFeedback>
+      </TouchableNativeFeedback> */}
     </>
   )
 }
