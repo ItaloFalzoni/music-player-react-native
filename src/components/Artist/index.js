@@ -1,14 +1,22 @@
-import React from 'react'
-import { View, Image, Text } from 'react-native'
-import { TouchableNativeFeedback } from 'react-native-gesture-handler'
+import React, { useRef } from 'react'
+import { View, Image, Text, Dimensions } from 'react-native'
+import { TouchableNativeFeedback, TouchableOpacity } from 'react-native-gesture-handler'
+import RBSheet from "react-native-raw-bottom-sheet"
 
 import playCircleIcon from '../../../assets/images/icons/play-circle.png'
+import PlayingNow from '../PlayingNow'
+
 
 import styles from './styles'
 
 export default function Artist({ ...props }) {
+  const refRBSheet = useRef()
+
+  const heightSheet = Dimensions.get('window').height
   return (
-    <TouchableNativeFeedback onPress={props.onPress} style={styles.content}>
+    <>
+    <TouchableNativeFeedback
+      style={styles.content}>
       <View style={styles.artistProfile}>
         <View style={styles.artistIcon} />
         <View style={styles.nameGroup}>
@@ -16,9 +24,31 @@ export default function Artist({ ...props }) {
           <Text style={styles.description}>8 musics</Text>
         </View>
       </View>
-      <TouchableNativeFeedback onPress={props.onPlay}>
+      <TouchableOpacity onPress={() => refRBSheet.current.open()}>
         <Image style={styles.actionIcon} source={playCircleIcon} />
-      </TouchableNativeFeedback>
+      </TouchableOpacity>
     </TouchableNativeFeedback>
+
+    <RBSheet
+        ref={refRBSheet}
+        closeOnDragDown={true}
+        closeOnPressMask={false}
+        height={heightSheet}
+        animationType={'slide'}
+        closeOnDragDown={true}
+        customStyles={{
+          wrapper: {
+            backgroundColor: "transparent"
+          },
+          draggableIcon: {
+            backgroundColor: "#000"
+          }
+        }}
+      >
+        <PlayingNow />
+      </RBSheet>
+    </>
+
+    
   )
 }

@@ -8,8 +8,9 @@ export default function ArtistScreen({ navigation }) {
   return (
     <ScrollView style={styles.scrollView}>
       <Artist
-        onPress={() => navigation.navigate('MusicList')}
-        onPlay={() => navigation.navigate('PlayingNow')} />
+        onPress={() => navigation.navigate('MusicScreen')}
+        onPlay={() => navigation.navigate('PlayingNow')}
+      />
     </ScrollView>
   )
 }
