@@ -4,13 +4,12 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import Browser from '../components/Browser'
 
-import MusicScreen from '../pages/MusicScreen'
+import List from '../pages/MusicScreen'
 import ArtistScreen from '../pages/ArtistScreen'
 import PlaylistScreen from '../pages/PlaylistScreen'
 
-import MusicList from '../pages/MusicList'
-
 import PlayingNow from '../components/PlayingNow'
+import MusicScreen from '../pages/MusicScreen'
 
 const Tab = createMaterialTopTabNavigator()
 const Stack = createStackNavigator()
@@ -32,14 +31,14 @@ const tabTopOptions = {
   shifting: true,
 }
 
-function MusicStack() {
-  return (
-    <Stack.Navigator headerMode="none">
-      <Stack.Screen name="MusicList" component={MusicScreen} />
-      <Stack.Screen name="PlayingNow" component={PlayingNow} />
-    </Stack.Navigator>
-  )
-}
+// function MusicStack() {
+//   return (
+//     <Stack.Navigator headerMode="none">
+//       <Stack.Screen name="MusicList" component={List} />
+//       <Stack.Screen name="PlayingNow" component={PlayingNow} />
+//     </Stack.Navigator>
+//   )
+// }
 
 export default function TabNavigator() {
   return (
@@ -48,7 +47,7 @@ export default function TabNavigator() {
       <Tab.Navigator
         initialRouteName="Home"
         tabBarOptions={tabTopOptions}>
-        <Tab.Screen name="Musics" component={MusicStack} />
+        <Tab.Screen name="Musics" component={MusicScreen} />
         <Tab.Screen name="Artists" component={ArtistScreen} />
         <Tab.Screen name="Playlists" component={PlaylistScreen} />
       </Tab.Navigator>
