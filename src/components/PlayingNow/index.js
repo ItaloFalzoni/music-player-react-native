@@ -40,7 +40,7 @@ export default function PlayingNow({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableNativeFeedback onPress={() => navigation.navigate('MusicList')}>
+        <TouchableNativeFeedback>
           <Image style={styles.actionIcon} source={chevronLeftIcon}></Image>
         </TouchableNativeFeedback>
         <Text style={styles.headerText}>PLAYING NOW</Text>
