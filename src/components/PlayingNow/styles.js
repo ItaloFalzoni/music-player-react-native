@@ -1,6 +1,12 @@
 import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    flex: 1,
+  },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -27,10 +33,10 @@ const styles = StyleSheet.create({
     color: '#171516',
   },
   musicDescription: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FEEFDD',
+    flex: 1,
   },
   musicLogo: {
     backgroundColor: '#C4C4C4',
@@ -52,18 +58,17 @@ const styles = StyleSheet.create({
     lineHeight: 18,
     color: '#4D4D4D',
   },
-  musicStats: {
+  musicControl: {
+    paddingHorizontal: 30,
+    paddingVertical: 60,
     borderRadius: 15,
     backgroundColor: '#FFF',
   },
-  musicControl: {
-    padding: 30,
-  },
-  secondRow: {
+  secondsRow: {
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
-  secondText: {
+  secondsText: {
     fontFamily: 'Poppins_700Bold',
     fontSize: 12,
     lineHeight: 18,
@@ -86,19 +91,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
-  },
-  pushButton: {
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FF4000',
-    padding: 15,
-  },
-  pushButtonText: {
-    fontFamily: 'Poppins_700Bold',
-    fontSize: 18,
-    lineHeight: 27,
-    color: '#FFF'
   },
 })
 export default styles
