@@ -4,13 +4,14 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import RBSheet from "react-native-raw-bottom-sheet"
 
 import plusSquareIcon from '../../../assets/images/icons/plus-square.png'
+import chevronDown from '../../../assets/images/icons/chevron-down.png'
 import PlayingNow from '../PlayingNow'
 import styles from './styles'
 
 export default function Music() {
   const refRBSheet = useRef()
 
-  const heightSheet = Dimensions.get('window').height
+  const heightSheet = Dimensions.get('window').height - 120
   return (
     <>
       <TouchableOpacity
@@ -32,16 +33,16 @@ export default function Music() {
       <RBSheet
         ref={refRBSheet}
         closeOnDragDown={true}
-        closeOnPressMask={false}
+        closeOnPressMask={true}
         height={heightSheet}
         animationType={'slide'}
-        closeOnDragDown={true}
         customStyles={{
           wrapper: {
-            backgroundColor: "transparent"
+            backgroundColor: 'rgba(0, 0, 0, 0.7)'
           },
           draggableIcon: {
-            backgroundColor: "#000"
+            backgroundColor: '#FF4000',
+            marginBottom: 0,
           }
         }}
       >
