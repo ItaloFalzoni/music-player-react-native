@@ -1,6 +1,6 @@
 import React from 'react'
-import { Text, View, Image } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
+import { Text, Image } from 'react-native'
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 
 import Playlist from '../../components/Playlist'
 import styles from './styles'
@@ -13,10 +13,12 @@ export default function PlaylistScreen() {
       <Playlist />
       <Playlist />
 
-      <View style={styles.newPlaylist}>
+      <TouchableOpacity
+        style={styles.newPlaylist}
+        onPress={() => {}}>
         <Image style={styles.actionIcon} source={plusCircleIcon} />
         <Text style={styles.newPlaylistText}>New Playlist</Text>
-      </View>
+      </TouchableOpacity>
     </ScrollView>
   )
 }
