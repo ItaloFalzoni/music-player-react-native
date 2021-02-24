@@ -12,7 +12,7 @@ import styles from './styles'
 export default function Artist({ ...props }) {
   const refRBSheet = useRef()
 
-  const heightSheet = Dimensions.get('window').height
+  const heightSheet = Dimensions.get('window').height - 120
   return (
     <>
     <TouchableNativeFeedback
@@ -32,19 +32,18 @@ export default function Artist({ ...props }) {
     <RBSheet
         ref={refRBSheet}
         closeOnDragDown={true}
-        closeOnPressMask={false}
+        closeOnPressMask={true}
         height={heightSheet}
         animationType={'slide'}
-        closeOnDragDown={true}
         customStyles={{
           wrapper: {
-            backgroundColor: "transparent"
+            backgroundColor: 'rgba(0, 0, 0, 0.7)'
           },
           draggableIcon: {
-            backgroundColor: "#000"
+            backgroundColor: '#FF4000',
+            marginBottom: 0,
           }
-        }}
-      >
+        }}>
         <PlayingNow />
       </RBSheet>
     </>

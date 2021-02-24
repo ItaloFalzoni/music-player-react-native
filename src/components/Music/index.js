@@ -4,8 +4,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import RBSheet from "react-native-raw-bottom-sheet"
 
 import plusSquareIcon from '../../../assets/images/icons/plus-square.png'
-import chevronDown from '../../../assets/images/icons/chevron-down.png'
 import PlayingNow from '../PlayingNow'
+
 import styles from './styles'
 
 export default function Music() {
@@ -44,8 +44,7 @@ export default function Music() {
             backgroundColor: '#FF4000',
             marginBottom: 0,
           }
-        }}
-      >
+        }}>
         <PlayingNow />
       </RBSheet>
     </>
